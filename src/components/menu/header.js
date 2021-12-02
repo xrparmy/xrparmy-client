@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
+import { header } from 'react-bootstrap';
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
 
@@ -31,28 +32,28 @@ const Header= function() {
     const [openMenu1, setOpenMenu1] = React.useState(false);
     const [openMenu2, setOpenMenu2] = React.useState(false);
     const [openMenu3, setOpenMenu3] = React.useState(false);
-    const handleBtnClick = () => {
+    const handleBtnClick = (): void => {
       setOpenMenu(!openMenu);
     };
-    const handleBtnClick1 = () => {
+    const handleBtnClick1 = (): void => {
       setOpenMenu1(!openMenu1);
     };
-    const handleBtnClick2 = () => {
+    const handleBtnClick2 = (): void => {
       setOpenMenu2(!openMenu2);
     };
-    const handleBtnClick3 = () => {
+    const handleBtnClick3 = (): void => {
       setOpenMenu3(!openMenu3);
     };
-    const closeMenu = () => {
+    const closeMenu = (): void => {
       setOpenMenu(false);
     };
-    const closeMenu1 = () => {
+    const closeMenu1 = (): void => {
       setOpenMenu1(false);
     };
-    const closeMenu2 = () => {
+    const closeMenu2 = (): void => {
       setOpenMenu2(false);
     };
-    const closeMenu3 = () => {
+    const closeMenu3 = (): void => {
       setOpenMenu3(false);
     };
     const ref = useOnclickOutside(() => {
@@ -98,17 +99,17 @@ const Header= function() {
               <div className='navbar-title navbar-item'>
                 <NavLink to="/">
                 <img
-                    src="/img/logo-3.png"
+                    src="./img/logo-3.png"
                     className="img-fluid d-block"
                     alt="#"
                   />
                   <img
-                    src="/img/logo-3.png"
+                    src="./img/logo-3.png"
                     className="img-fluid d-3"
                     alt="#"
                   />
                   <img
-                    src="/img/logo-light.png"
+                    src="./img/logo-light.png"
                     className="img-fluid d-none"
                     alt="#"
                   />
@@ -155,8 +156,8 @@ const Header= function() {
                               <NavLink to="/explore" onClick={() => btn_icon(!showmenu)}>Explore</NavLink>
                               <NavLink to="/explore2" onClick={() => btn_icon(!showmenu)}>Explore 2</NavLink>
                               <NavLink to="/rangking" onClick={() => btn_icon(!showmenu)}>Rangking</NavLink>
-                              <NavLink to="/colection/1" onClick={() => btn_icon(!showmenu)}>Collection</NavLink>
-                              <NavLink to="/ItemDetail/1" onClick={() => btn_icon(!showmenu)}>Items Details</NavLink>
+                              <NavLink to="/colection" onClick={() => btn_icon(!showmenu)}>Collection</NavLink>
+                              <NavLink to="/ItemDetail" onClick={() => btn_icon(!showmenu)}>Items Details</NavLink>
                               <NavLink to="/Auction" onClick={() => btn_icon(!showmenu)}>Live Auction</NavLink>
                               <NavLink to="/helpcenter" onClick={() => btn_icon(!showmenu)}>Help Center</NavLink>
                             </div>
@@ -174,10 +175,9 @@ const Header= function() {
                         {openMenu2 && (
                           <div className='item-dropdown'>
                             <div className="dropdown" onClick={closeMenu2}>
-                              <NavLink to="/Author/1" onClick={() => btn_icon(!showmenu)}>Author</NavLink>
+                              <NavLink to="/Author" onClick={() => btn_icon(!showmenu)}>Author</NavLink>
                               <NavLink to="/wallet" onClick={() => btn_icon(!showmenu)}>Wallet</NavLink>
                               <NavLink to="/create" onClick={() => btn_icon(!showmenu)}>Create</NavLink>
-                              <NavLink to="/mint" onClick={() => btn_icon(!showmenu)}>NFT Minting</NavLink>
                               <NavLink to="/news" onClick={() => btn_icon(!showmenu)}>News</NavLink>
                               <NavLink to="/works" onClick={() => btn_icon(!showmenu)}>Gallery</NavLink>
                               <NavLink to="/login" onClick={() => btn_icon(!showmenu)}>login</NavLink>
@@ -254,8 +254,8 @@ const Header= function() {
                               <NavLink to="/explore">Explore</NavLink>
                               <NavLink to="/explore2">Explore 2</NavLink>
                               <NavLink to="/rangking">Rangking</NavLink>
-                              <NavLink to="/colection/1">Collection</NavLink>
-                              <NavLink to="/ItemDetail/1">Items Details</NavLink>
+                              <NavLink to="/colection">Collection</NavLink>
+                              <NavLink to="/ItemDetail">Items Details</NavLink>
                               <NavLink to="/Auction">Live Auction</NavLink>
                               <NavLink to="/helpcenter">Help Center</NavLink>
                               </div>
@@ -274,10 +274,9 @@ const Header= function() {
                             {openMenu2 && (
                             <div className='item-dropdown'>
                               <div className="dropdown" onClick={closeMenu2}>
-                              <NavLink to="/Author/1">Author</NavLink>
+                              <NavLink to="/Author">Author</NavLink>
                               <NavLink to="/wallet">Wallet</NavLink>
                               <NavLink to="/create">Create</NavLink>
-                              <NavLink to="/mint">NFT Minting</NavLink>
                               <NavLink to="/news">News</NavLink>
                               <NavLink to="/works">Gallery</NavLink>
                               <NavLink to="/login">login</NavLink>

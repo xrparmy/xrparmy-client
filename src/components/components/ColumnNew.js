@@ -7,9 +7,9 @@ export default class Responsive extends Component {
 
     dummyData = [{
         deadline:"December, 30, 2021",
-        authorLink: "#",
-        nftLink: "#",
-        bidLink: "#",
+        authorLink: "ItemDetail",
+        nftLink: "ItemDetail",
+        bidLink: "ItemDetail",
         authorImg: "./img/author/author-1.jpg",
         previewImg: "./img/items/static-1.jpg",
         title: "Pinky Ocean",

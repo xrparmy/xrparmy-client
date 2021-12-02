@@ -8,11 +8,9 @@ import Home2 from './pages/home2';
 import Explore from './pages/explore';
 import Explore2 from './pages/explore2';
 import Helpcenter from './pages/helpcenter';
-// import Rangking from './pages/rangking';
-import RankingRedux from './pages/RankingRedux';
+import Rangking from './pages/rangking';
 import Colection from './pages/colection';
-// import ItemDetail from './pages/ItemDetail';
-import ItemDetailRedux from './pages/ItemDetailRedux';
+import ItemDetail from './pages/ItemDetail';
 import Author from './pages/Author';
 import Wallet from './pages/wallet';
 import Login from './pages/login';
@@ -21,7 +19,6 @@ import Register from './pages/register';
 import Price from './pages/price';
 import Works from './pages/works';
 import News from './pages/news';
-import NewsSingle from './pages/newsSingle';
 import Create from './pages/create';
 import Auction from './pages/Auction';
 import Activity from './pages/activity';
@@ -33,7 +30,6 @@ import Accordion from './pages/accordion';
 import Alerts from './pages/alerts';
 import Progressbar from './pages/progressbar';
 import Tabs from './pages/tabs';
-import Minter from './pages/Minter';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -76,10 +72,10 @@ const app= () => (
         <Explore path="/explore" />
         <Explore2 path="/explore2" />
         <Helpcenter path="/helpcenter" />
-        <RankingRedux path="/rangking" />
-        <Colection path="/colection/:collectionId" />
-        <ItemDetailRedux path="/ItemDetail/:nftId" />
-        <Author path="/Author/:authorId" />
+        <Rangking path="/rangking" />
+        <Colection path="/colection" />
+        <ItemDetail path="/ItemDetail" />
+        <Author path="/Author" />
         <Wallet path="/wallet" />
         <Login path="/login" />
         <LoginTwo path="/loginTwo" />
@@ -87,7 +83,6 @@ const app= () => (
         <Price path="/price" />
         <Works path="/works" />
         <News path="/news" />
-        <NewsSingle path="/news/:postId" />
         <Create path="/create" />
         <Auction path="/Auction" />
         <Activity path="/activity" />
@@ -99,7 +94,6 @@ const app= () => (
         <Alerts path="/alerts" />
         <Progressbar path="/progressbar" />
         <Tabs path="/tabs" />
-        <Minter path="/mint" />
         </ScrollTop>
       </PosedRouter>
     <ScrollToTopBtn />

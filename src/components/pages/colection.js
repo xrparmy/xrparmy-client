@@ -1,11 +1,8 @@
-import React, { memo, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import ColumnNewRedux from '../components/ColumnNewRedux';
+import React from "react";
+import ColumnZero from '../components/ColumnZero';
+import ColumnZeroTwo from '../components/ColumnZeroTwo';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import * as selectors from '../../store/selectors';
-import { fetchHotCollections } from "../../store/actions/thunks";
-import api from "../../core/api";
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.white {
@@ -13,58 +10,48 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const Colection= function({ collectionId = 1 }) {
+const Colection= function() {
 const [openMenu, setOpenMenu] = React.useState(true);
 const [openMenu1, setOpenMenu1] = React.useState(false);
-const handleBtnClick = () => {
+const handleBtnClick = (): void => {
   setOpenMenu(!openMenu);
   setOpenMenu1(false);
   document.getElementById("Mainbtn").classList.add("active");
   document.getElementById("Mainbtn1").classList.remove("active");
 };
-const handleBtnClick1 = () => {
+const handleBtnClick1 = (): void => {
   setOpenMenu1(!openMenu1);
   setOpenMenu(false);
   document.getElementById("Mainbtn1").classList.add("active");
   document.getElementById("Mainbtn").classList.remove("active");
 };
 
-const dispatch = useDispatch();
-const hotCollectionsState = useSelector(selectors.hotCollectionsState);
-const hotCollections = hotCollectionsState.data ? hotCollectionsState.data[0] : {};
 
-useEffect(() => {
-    dispatch(fetchHotCollections(collectionId));
-}, [dispatch, collectionId]);
 
 return (
 <div>
 <GlobalStyles/>
-  { hotCollections.author &&  hotCollections.author.banner &&
-      <section id='profile_banner' className='jumbotron breadcumb no-bg' style={{backgroundImage: `url(${api.baseUrl + hotCollections.author.banner.url})`}}>
-        <div className='mainbreadcumb'>
-        </div>
-      </section>
-    }
+
+  <section id='profile_banner' className='jumbotron breadcumb no-bg' style={{backgroundImage: `url(${'./img/background/4.jpg'})`}}>
+    <div className='mainbreadcumb'>
+    </div>
+  </section>
 
   <section className='container d_coll no-top no-bottom'>
     <div className='row'>
       <div className="col-md-12">
          <div className="d_profile">
                   <div className="profile_avatar">
-                  { hotCollections.author &&  hotCollections.author.avatar &&
-                    <div className="d_profile_img">
-                      <img src={api.baseUrl + hotCollections.author.avatar.url} alt=""/>
-                      <i className="fa fa-check"></i>
-                    </div>
-                  }
+                      <div className="d_profile_img">
+                          <img src="./img/author/author-1.jpg" alt=""/>
+                          <i className="fa fa-check"></i>
+                      </div>
+                      
                       <div className="profile_name">
                           <h4>
-                            { hotCollections.name }                                                          
+                              Abstraction                                                
                               <div className="clearfix"></div>
-                              { hotCollections.author &&  hotCollections.author.wallet &&
-                                <span id="wallet" className="profile_wallet">{ hotCollections.author.wallet }</span>
-                              }
+                              <span id="wallet" className="profile_wallet">DdzFFzCqrhshMSxb9oW3mRo4MJrQkusV3fGFSTwaiu4wPBqMryA9DYVJCkW9n7twCffG5f5wX2sSkoDXGiZB1HPa7K7f865Kk4LqnrME</span>
                               <button id="btn_copy" title="Copy Text">Copy</button>
                           </h4>
                       </div>
@@ -88,12 +75,12 @@ return (
         </div>
       {openMenu && (  
         <div id='zero1' className='onStep fadeIn'>
-          <ColumnNewRedux shuffle showLoadMore={false} authorId={hotCollections.author ? hotCollections.author.id : 1} />
+         <ColumnZero/>
         </div>
       )}
       {openMenu1 && ( 
         <div id='zero2' className='onStep fadeIn'>
-         <ColumnNewRedux shuffle showLoadMore={false}/>
+         <ColumnZeroTwo/>
         </div>
       )}
       </section>
@@ -103,4 +90,4 @@ return (
 </div>
 );
 }
-export default memo(Colection);
+export default Colection;

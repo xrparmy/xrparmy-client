@@ -1,9 +1,9 @@
 import React from 'react';
-import SliderCarouselSingleRedux from '../components/SliderCarouselSingleRedux';
+import SliderCarousel from '../components/SliderCarouselsingle';
 import FeatureBox from '../components/FeatureBox';
-import CarouselCollectionRedux from '../components/CarouselCollectionRedux';
-import ColumnNewRedux from '../components/ColumnNewRedux';
-import AuthorListRedux from '../components/AuthorListRedux';
+import CarouselCollection from '../components/CarouselCollection';
+import ColumnNew from '../components/ColumnNew';
+import AuthorList from '../components/authorList';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
 import Reveal from 'react-awesome-reveal';
@@ -98,7 +98,7 @@ const homethree= () => (
                 <div className="spacer-double"></div>
             </div>
              <div className='col-lg-6 px-0'>
-               <SliderCarouselSingleRedux/>
+               <SliderCarousel/>
              </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const homethree= () => (
               <h2 className='style-2'>New Items</h2>
           </div>
         </div>
-       <ColumnNewRedux/>
+       <ColumnNew/>
       </div>
       </section>
 
@@ -124,7 +124,7 @@ const homethree= () => (
         <div className='container no-top'>
           <div className='row'>
             <div className='col-lg-12 px-0'>
-              <CarouselCollectionRedux/>
+              <CarouselCollection/>
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ const homethree= () => (
               <h2 className='style-2'>Top Seller</h2>
           </div>
           <div className='col-lg-12'>
-            <AuthorListRedux/>
+            <AuthorList/>
           </div>
         </div>
       </section>
